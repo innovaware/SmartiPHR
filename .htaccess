@@ -1,0 +1,41 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+
+#RewriteRule ^shop/([A-Za-z0-9-]+)/?$    view/welcome.php?shop_name=$1    [NC,L]    # 
+#RewriteRule ^error_page/([A-Za-z0-9-]+)/?$    view/error_page.php?error_code=$1    [NC,L]    # 
+RewriteRule ^home   view/home_page.php    [NC,L]    # 
+RewriteRule ^ges-user   view/ges_utenti.php    [NC,L]    # 
+RewriteRule ^ges-anag   view/ges_anagrafica.php    [NC,L]    # 
+RewriteRule ^ges-pazienti   view/ges_pazienti.php    [NC,L]    # 
+RewriteRule ^ges-farmaci   view/ges_farmaci.php    [NC,L]    # 
+RewriteRule ^ges-stanze   view/ges_stanze.php    [NC,L]    # 
+  
+RewriteRule ^ges-mag/([A-Za-z0-9-]+)/?$   view/gestione_magazzino.php?tipo_mag=$1 [NC,L]
+
+RewriteRule ^menu_ospiti  view/menu_ospite.php    [NC,L]  
+RewriteRule ^report_menu  view/report_menu.php    [NC,L]  #
+
+
+RewriteRule ^area_sicurezza  view/area_sicurezza.php    [NC,L]  #
+RewriteRule ^ges_collaboratori  view/ges_collaboratori.php    [NC,L]  #
+RewriteRule ^preview_collaboratore  view/dettaglio_collaboratore.php    [NC,L]  #
+
+#RewriteRule ^cartella-infermieristica/([A-Za-z0-9-]+)/?$ view/mod_cartella_infermieristica.php?id_cartella=$1  [NC,L]
+
+#RewriteRule ^cartella-clinica/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ view/mod_cartella_clinica.php?sfx=$1&id_cartella=$2  [NC,L]
+
+RewriteRule ^cartella-clinica/([A-Za-z0-9-]+)/?$ view/cartella_clinica.php?id_paziente=$1  [NC,L]
+RewriteRule ^cartella-infermieristica/([A-Za-z0-9-]+)/?$ view/cartella_inferm.php?id_paziente=$1  [NC,L]
+
+
+RewriteRule ^area_messaggi  view/area_messaggi.php    [NC,L]  #
+
+RewriteRule ^reset-password/([A-Za-z0-9-]+)/?$   view/reset_password.php?sec_token=$1    [NC,L]    # 
+
+
+RewriteRule ^visualizza/?([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ view/view_doc.php?tipo=$1&id=$2  [NC,L]
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+

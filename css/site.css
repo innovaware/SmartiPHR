@@ -1,0 +1,153 @@
+.table {
+    width: 100% ;
+    margin-bottom: 1rem ;
+    background-color: transparent;
+}
+
+.div-tab{
+    width: 1000px !important;
+}
+
+
+.btn-indietro {
+    background-color: DodgerBlue !important;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 20px !important;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+
+  /* Darker background on mouse-over */
+ .btn-indietro:hover {
+    background-color: RoyalBlue;
+  }
+  
+ .selected{
+    background-color: #99ffcc;
+}
+.item_select{
+    padding:5px;
+}
+
+#btn_carica_item_modal{
+    margin-left: 50%;
+}
+
+#cal_container{
+    margin-left: 20%;
+}
+
+.btn_dettaglio_rep_menu{
+    color: #fff !important;
+    background-color: #117a8b !important;
+    border-color: #10707f !important;
+}
+
+.card-body{
+   margin-top: 5% !important;
+    width: 50% !important;
+    margin-left: 25% !important;
+    background: #f3f3f4;
+}
+  
+
+input{
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    height: 30px;
+}
+
+.row{
+    padding:10px;
+}
+
+#panel-gen{
+    border:1px solid black;
+    padding:20px
+}
+
+.container{
+    margin-left: 5% !important;
+    margin-right: 0px !important;
+    width: 1500px !important;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+.calend{
+    width: 20% !important;
+}
+
+
+#btn_save_tab_inf,#btn_save_tab_med{
+    float: right;
+    padding:10px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#tab-mess{
+    width: 100%;
+}
+
+#tab-mess tr,#tab-mess tr td,#tab-mess thead tr th{
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.modal-width{
+    max-width: 80% !important;
+}
+
+#DataTables_Table_0{
+    width: 100% !important;
+}
+
+
+table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting:after {
+    content: "\25BC" !important;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\25B2" !important;
+}

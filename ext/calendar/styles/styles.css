@@ -1,0 +1,90 @@
+
+.cal_day{
+	padding: 0px ;
+	border:1px solid #ddd;
+	width: 150px;
+}
+.label_day{
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+	padding:2px;
+}
+.container_event{
+	min-height: 100px;
+}
+
+/*.container_vista_settimana{
+	border-bottom: 1px solid black;
+}*/
+.container_vista_settimana{
+	border-bottom: 1px solid #bbb;
+}
+
+.cal_event{
+	
+	font-size: 11px;
+	color: white;
+	padding: 3px;
+	border-radius: 5px;
+	/*margin: 3px;*/
+	
+}
+
+.cal_head{
+	font-weight: bold;
+	text-align: center;
+	
+}
+
+.over{
+	background-color: #ccebff;
+	border-radius: 5px;
+}
+
+.disabled{
+	background-color: #c6d9ec;
+}
+.table_mese{
+	border: 1px #ddd solid;
+}
+
+.div_vista_giorno{
+	float:left;
+	border:1px solid #bbb; 
+	width:150px
+}
+
+.div_container_vistaora{
+	float:left;
+	border:1px solid #bbb;
+	width:150px
+}
+
+.div_vista_ora{
+	border:1px solid #bbb;
+	height:100px;
+	font-weight:bold;
+}
+
+.label_day_sett{
+	height: 50px;
+	background-color: white
+}
+
+
+.event_type_1{
+	background-color: #3788d8;
+}
+.event_type_2{
+	background-color: red;
+}
+.event_type_3{
+	background-color: #00ff00;
+}
+.event_type_4{
+	background-color: #9933ff;
+}
+.event_type_5{
+	background-color: #3973ac;
+}
