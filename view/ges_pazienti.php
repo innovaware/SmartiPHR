@@ -2861,7 +2861,7 @@ if (!checkPermission()) {
                                 
                               </ul>
                               <div class="tab-content" id="myTabContent">
-                                  <div class="tab-pane fade active" id="contrattoricovero" role="tabpanel" aria-labelledby="contrattoricovero-tab">
+                                  <div class="tab-pane fade show active" id="contrattoricovero" role="tabpanel" aria-labelledby="contrattoricovero-tab">
                                 <p style="text-align: center;"><strong>CONTRATTO DI RICOVERO</strong></p>
 <p style="text-align: center;"><strong>Tra</strong></p>
 <p><strong>R.S.A. per Disabili &ldquo;La Rinascita &rdquo;S.r.l.,&nbsp; C.F. 02073410801, con sede in Santa Caterina sullo Ionio, in C.da Monaci, 1, nella persona del Dr Rocco Cosentino, in qualit&agrave; di rappresentante legale p.t.</strong></p>
