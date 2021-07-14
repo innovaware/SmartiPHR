@@ -151,3 +151,7 @@ table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting:after {
 table.dataTable thead .sorting_asc:after {
     content: "\25B2" !important;
 }
+
+.tab-content {
+    padding: 20px;
+}
