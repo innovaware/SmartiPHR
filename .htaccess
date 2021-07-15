@@ -34,6 +34,16 @@ RewriteRule ^area_messaggi  view/area_messaggi.php    [NC,L]  #
 RewriteRule ^reset-password/([A-Za-z0-9-]+)/?$   view/reset_password.php?sec_token=$1    [NC,L]    # 
 
 
+RewriteRule ^area_medica  view/area_medica.php    [NC,L]  #
+RewriteRule ^area_infermieristica  view/area_infermieristica.php    [NC,L]  #
+
+RewriteRule ^area_ass_sociale  view/area_ass_sociale.php    [NC,L]  #
+RewriteRule ^area_cartella_psicologica  view/area_cartella_psicologica.php    [NC,L]  #
+RewriteRule ^area_cartella_fisioterapia  view/area_cartella_fisioterapia.php    [NC,L]  #
+RewriteRule ^area_cartella_educativa  view/area_cartella_educativa.php    [NC,L]  #
+
+RewriteRule ^area_oss  view/area_oss.php    [NC,L]  #
+
 RewriteRule ^visualizza/?([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ view/view_doc.php?tipo=$1&id=$2  [NC,L]
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]

@@ -254,8 +254,54 @@ function getMenuDinamico() {
         $url="#";
         if($key == 'Ospiti'){
             $url='ges-pazienti';
-             $string_result .= '<li><a  href="/' . 'SmartiPHR' . '/' . $url . '">Ospiti</a></li>';
-        }else{
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Ospiti</a></li>';
+        }
+        else if($key == 'Area Medica'){
+            $url='area_medica';
+             $string_result .= '<li><a  href="/' . 'SmartiPHR' . '/' . $url . '">Area Medica</a></li>';
+        }
+        else if($key == 'Area Infermieristica'){
+            $url='area_infermieristica';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Area Infermieristica</a></li>';
+        }
+        else if($key == 'Area Sicurezza'){
+            $url='area_sicurezza';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Area Sicurezza</a></li>';
+        }
+        
+        else if($key == 'Area Socio Psicologica'){
+            $url='area_sociops';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Area Socio Psicologica</a></li>';
+        }
+         else if($key == 'Area Ausiliari'){
+            $url='area_ausiliari';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Area Ausiliari</a></li>';
+        }
+        else if($key == 'Area Messaggi'){
+            $url='area_messaggi';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Area Messaggi</a></li>';
+        }
+        else if($key == 'Farmaci'){
+            $url='ges-farmaci';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">Farmaci</a></li>';
+        }
+        else if($key == 'Area Psicologica'){
+            $url='area_cartella_psicologica';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">'.$key.'</a></li>';
+        }
+        else if($key == 'Area Educativa'){
+            $url='area_cartella_educativa';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">'.$key.'</a></li>';
+        }
+        else if($key == 'Area Fisioterapica'){
+            $url='area_cartella_fisioterapia';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">'.$key.'</a></li>';
+        }
+        else if($key == 'Area O.S.S.'){
+            $url='area_oss';
+             $string_result .= '<li><a href="/' . 'SmartiPHR' . '/' . $url . '">'.$key.'</a></li>';
+        }
+        else{
             
         $string_result .= '<li>
                     <a href="'.$url.'"><i class="fa fa-home"></i> <span class="nav-label">
