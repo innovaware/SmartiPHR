@@ -6,8 +6,14 @@
 
 var nome_progetto = 'SmartiPHR';
 
+$("#input_password").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#btn_login").click();
+    }
+});
+
 $('#btn_login').click(function () {
-    $('#div_auth_logger').html('Login in corso...');
+    $('#div_auth_logger').html('Login in corso ...');
     $.ajax({
         url: "./controller/User.php",
         type: "POST",
@@ -22,6 +28,7 @@ $('#btn_login').click(function () {
             }
         },
         error: function (rese) {
+            console.log("error: " + JSON.stringify(rese));
             alert("error: " + rese);
         }
     });

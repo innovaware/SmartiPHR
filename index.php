@@ -46,16 +46,15 @@ if (isset($_SESSION['application'])) {
                     <li>Esegui l'accesso</li>
                 </ul>
 
-
                 <div class="md-form">   
                     <label for="input_username">Username</label>
-                    <input type="text" class="form-control" id="input_username" required>
+                    <input type="text" class="form-control" id="input_username" placeholder="Username" required>
 
                 </div>
 
-                <div class="md-form">
+                <div class="md-form" style="margin-top: 10px;">
                     <label for="input_password">Password</label>
-                    <input type="password" class="form-control" id="input_password" required>
+                    <input type="password" class="form-control" id="input_password" placeholder="Password" required>
 
                 </div>
 
@@ -68,7 +67,6 @@ if (isset($_SESSION['application'])) {
                 <div class="form-group">
                     <button class="btn btn-primary btn-block btn-rounded z-depth-1a" id="btn_login">Login</button>
                 </div>
-
                 <!--button id="btn_login" class="btn btn-lg btn-primary btn-block" type="submit">Login</button-->
                 <p id="div_auth_logger" class="mt-5 mb-3 text-muted"></p>
                 <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
