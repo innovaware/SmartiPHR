@@ -2866,7 +2866,7 @@ if (!checkPermission()) {
 <p style="text-align: center;"><strong>Tra</strong></p>
 <p><strong>R.S.A. per Disabili &ldquo;La Rinascita &rdquo;S.r.l.,&nbsp; C.F. 02073410801, con sede in Santa Caterina sullo Ionio, in C.da Monaci, 1, nella persona del Dr Rocco Cosentino, in qualit&agrave; di rappresentante legale p.t.</strong></p>
 <p style="text-align: center;"><strong>E</strong></p>
-<p><strong>Il Signor <input type="text" id="fullnome"> nato a <input type="text" id="luogo_nascita"> il DATA e residente in INDIRIZZO Via VIA CF CF che richiede assistenza personalizzata per se stesso/parente PARENTE nato a CITTA il DATA CF CF residente a CITTA Via VIA</strong></p>
+<p><strong>Il Signor <input type="text" id="fullnome"> nato a <input type="text" id="luogo_nascita"> il <input id="data_nascita" type="text" class="form-control"> e residente in INDIRIZZO Via VIA CF CF che richiede assistenza personalizzata per se stesso/parente PARENTE nato a CITTA il DATA CF CF residente a CITTA Via VIA</strong></p>
 <p style="text-align: center;"><strong>(di seguito denominato utente)</strong></p>
                                 </div>
                                 <div class="tab-pane fade" id="documenti" role="tabpanel" aria-labelledby="documenti-tab">2</div>
@@ -2950,7 +2950,17 @@ if (!checkPermission()) {
 <script>
                 
  $(document).ready(function(){
-                       
+        
+        aggiornaListaAnagrafiche(0);
+        
+                $('#data_nascita').datepicker({
+                    todayBtn: "linked",
+                    keyboardNavigation: false,
+                    forceParse: false,
+                    calendarWeeks: true,
+                    autoclose: true
+                });
+                
         $('#data_trasferimento .input-group.date').datepicker({
                     todayBtn: "linked",
                     keyboardNavigation: false,

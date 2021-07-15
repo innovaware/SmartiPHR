@@ -155,3 +155,8 @@ table.dataTable thead .sorting_asc:after {
 .tab-content {
     padding: 20px;
 }
+
+#data_nascita {
+    display: inline;
+    width: auto;
+}
