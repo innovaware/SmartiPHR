@@ -42,6 +42,7 @@ if (!checkPermission()) {
     <link href="/<?php echo $nome_progetto ?>/css/animate.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/css/style.css" rel="stylesheet">
        <link href="/<?php echo $nome_progetto ?>/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+       <link href="/<?php echo $nome_progetto ?>/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
        <link rel="stylesheet" href="/<?php echo $nome_progetto ?>/css/site.css" >
  
 </head>

@@ -233,15 +233,15 @@ function getListaAnagraficheAreaOSS() {
         $obj->data_nasc = dataEn2It($row['data_nasc']); 
 
         
-        $actions .= '<button class="btn btn-warning btn_view_area_cp"  
-            data-id_cartella="' . $row['id_cartella_amm'] . '"   data-id_anag="' . $row['id'] . '">Ingresso</button>';
+        $actions .= '<button class="btn btn-warning btn_view_ingresso"  
+            data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'"   data-id_anag="' . $row['id'] . '">Ingresso</button>';
 
 
-        $actions .= '<button class="btn btn-warning btn_view_area_ce"  
-              data-id_cartella="' . $row['id_cartella_med'] . '" data-id_anag="' . $row['id'] . '" data-sfx="med">Attività quotidiane</button>';
+        $actions .= '<button class="btn btn-warning btn_view_attivita"  
+              data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'" data-id_anag="' . $row['id'] . '" data-sfx="med">Attività quotidiane</button>';
 
-        $actions .= '<button class="btn btn-warning btn_view_area_ce"  
-              data-id_cartella="' . $row['id_cartella_med'] . '" data-id_anag="' . $row['id'] . '" data-sfx="med">Registro Consegne</button>';
+        $actions .= '<button class="btn btn-warning btn_view_consegne"  
+              data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'" data-id_anag="' . $row['id'] . '" data-sfx="med">Registro Consegne</button>';
         
         
         $obj->actions = $actions;

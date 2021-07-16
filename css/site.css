@@ -53,11 +53,11 @@
 }
   
 
-input{
+/*input{
     margin-left: 20px !important;
     margin-right: 20px !important;
     height: 30px;
-}
+}*/
 
 .row{
     padding:10px;
@@ -68,11 +68,11 @@ input{
     padding:20px
 }
 
-.container{
+/*.container{
     margin-left: 5% !important;
     margin-right: 0px !important;
     width: 1500px !important;
-}
+}*/
 
 /* Style the tab */
 .tab {
@@ -150,4 +150,26 @@ table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting:after {
 
 table.dataTable thead .sorting_asc:after {
     content: "\25B2" !important;
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+#data_nascita, #data_nascita_parente {
+    display: inline;
+    width: 100px;
+}
+
+#btn_login {
+    margin-top: 20px;
+}
+
+.btn-warning{
+   margin-right: 10px; 
+}
+
+
+.btn-green{
+    background-color: #1ab394;
 }
