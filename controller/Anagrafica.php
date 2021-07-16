@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         insertAnagrafica($_POST['nome'], $_POST['cognome'], $_POST['indirizzo'], $_POST['data_nasc'], $_POST['sesso'], $_POST['cap'], $_POST['localita'], $_POST['provincia']);
     }
     if ($_POST['operation'] == 'getListaAnagrafiche') {
-        echo getListaAnagrafiche($_POST['func_admin'], $_POST['func_subadmin'], $_POST['check']);
+        echo getListaAnagrafiche($_POST['func_admin'], $_POST['area']);
     }
     if ($_POST['operation'] == 'retrieveDivSearchPaziente') {
         echo retrieveDivSearchPaziente($_POST['search_text']);
@@ -26,6 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($_POST['operation'] == 'getDatiPanelAnagrafica') {
         echo getDatiPanelAnagrafica($_POST['id_paziente']);
+    }
+    
+    if ($_POST['operation'] == 'aggiornaListaAnagraficheAreaSocioPS') {
+        echo getListaAnagraficheAreaSocioPS($_POST['func_admin'], $_POST['area']);
+    }
+    
+    
+    if ($_POST['operation'] == 'aggiornaListaAnagraficheAreaOSS') {
+        echo getListaAnagraficheAreaOSS();
     }
 }
 
@@ -49,7 +58,7 @@ function insertAnagrafica($nome, $cognome, $indirizzo, $data_nasc, $sesso, $cap,
     echo json_encode($res);
 }
 
-function getListaAnagrafiche($function_admin, $function_subadmin, $check = 'NO') {
+function getListaAnagrafiche($function_admin, $area) {
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -76,7 +85,7 @@ function getListaAnagrafiche($function_admin, $function_subadmin, $check = 'NO')
         $obj->localita = $row['localita'];
         $obj->provincia = $row['provincia'];
 
-        if ($function_admin == 'SI') {
+        if ($function_admin == 'SI' && $area == 0) {
             /*if ($row['id_cartella_amm'] == '') {
                 $actions .= '<button class="btn btn-info btn_ins_cartella_clinica" 
                     data-nome="' . $row['nome'] . '"
@@ -85,7 +94,7 @@ function getListaAnagrafiche($function_admin, $function_subadmin, $check = 'NO')
                     data-sfx="amm"
                     data-toggle="modal" data-target="#modal_inserisci_cartella_clinica">AM</button>';
             } else {*/
-                $actions .= '<button class="btn btn-warning btn_view_cartella_clinica"  
+                $actions .= '<button class="btn btn-warning btn_view_area_amm"  
                     data-id_cartella="' . $row['id_cartella_amm'] . '"  data-sfx="amm">AM</button>';
             //}
         }
@@ -103,7 +112,7 @@ function getListaAnagrafiche($function_admin, $function_subadmin, $check = 'NO')
                     data-id_cartella="' . $row['id_cartella_med'] . '" data-id_anag="' . $row['id'] . '" data-sfx="med">CC</button>';
             //}
         }
-        if ($function_subadmin == 'SI') {
+        if ($function_admin == 'SI') {
            /* if ($row['id_cartella_inf'] == '') {
                 $actions .= '<button class="btn btn-info btn_ins_cartella_clinica" 
                     data-nome="' . $row['nome'] . '"
@@ -119,15 +128,124 @@ function getListaAnagrafiche($function_admin, $function_subadmin, $check = 'NO')
         
         
         
-        
-        $actions .= '<button class="btn btn-warning btn_gestione_menu" 
+        if($area == 0){
+        $actions .= '<button class="btn btn-warning btn_view_covid" 
             data-nome="' . $row['nome'] . '"
             data-cognome="' . $row['cognome'] . '"
             data-id_anag="' . $row['id'] . '" 
-            data-sfx="amm">AC</button>';         
+            data-sfx="amm">AC</button>'; 
+        }        
         
             $obj->actions = $actions;
             array_push($data,$obj);
+        
+    }
+    $results = ["sEcho" => 1,
+        	"iTotalRecords" => count($data),
+        	"iTotalDisplayRecords" => count($data),
+        	"aaData" => $data ];
+
+
+        echo json_encode($results);
+}
+
+
+
+function getListaAnagraficheAreaSocioPS($function_admin, $area) {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $mysqli = new mysqli(DB_SERVER_FMAG, DB_USER_FMAG, DB_PASSWORD_FMAG, DB_DATABASE_FMAG);
+    $query = " select anag.* , cartella_amm.id as id_cartella_amm, cartella_med.id as id_cartella_med, cartella_inf.id as id_cartella_inf 
+                from t_anagrafica anag 
+                LEFT OUTER JOIN t_cartella_amm_mast cartella_amm ON anag.id = cartella_amm.id_anag
+                LEFT OUTER JOIN t_cartella_med_mast cartella_med ON anag.id = cartella_med.id_anag
+                LEFT OUTER JOIN t_cartella_inf_mast cartella_inf ON anag.id = cartella_inf.id_anag
+                order by anag.cognome, anag.nome ";
+
+    $res_dipendenti = mysqli_query($mysqli, $query);
+    
+    $data = [];
+    while ($row = mysqli_fetch_array($res_dipendenti)) {
+        $actions = '';
+
+        $obj = new stdClass();
+        $obj->cognome = $row['cognome'];
+        $obj->nome = $row['nome'];
+        $obj->data_nasc = dataEn2It($row['data_nasc']); 
+
+        $obj->indirizzo = $row['indirizzo'];
+        $obj->localita = $row['localita'];
+        $obj->provincia = $row['provincia'];
+
+        if ($area == 0) {
+            $actions .= '<button class="btn btn-warning btn_view_area_cp"  
+                data-id_cartella="' . $row['id_cartella_amm'] . '"   data-id_anag="' . $row['id'] . '">CP</button>';
+
+        }
+        
+        else if ($area == 1) {
+
+            $actions .= '<button class="btn btn-warning btn_view_area_ce"  
+                  data-id_cartella="' . $row['id_cartella_med'] . '" data-id_anag="' . $row['id'] . '" data-sfx="med">CE</button>';
+
+        }
+        else{
+            $actions .= '<button class="btn btn-warning btn_view_area_ce"  
+                  data-id_cartella="' . $row['id_cartella_med'] . '" data-id_anag="' . $row['id'] . '" data-sfx="med">CFR</button>';
+        }
+        
+        $obj->actions = $actions;
+        array_push($data,$obj);
+        
+    }
+    $results = ["sEcho" => 1,
+        	"iTotalRecords" => count($data),
+        	"iTotalDisplayRecords" => count($data),
+        	"aaData" => $data ];
+
+
+        echo json_encode($results);
+}
+
+
+function getListaAnagraficheAreaOSS() {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $mysqli = new mysqli(DB_SERVER_FMAG, DB_USER_FMAG, DB_PASSWORD_FMAG, DB_DATABASE_FMAG);
+    $query = " select anag.* , cartella_amm.id as id_cartella_amm, cartella_med.id as id_cartella_med, cartella_inf.id as id_cartella_inf 
+                from t_anagrafica anag 
+                LEFT OUTER JOIN t_cartella_amm_mast cartella_amm ON anag.id = cartella_amm.id_anag
+                LEFT OUTER JOIN t_cartella_med_mast cartella_med ON anag.id = cartella_med.id_anag
+                LEFT OUTER JOIN t_cartella_inf_mast cartella_inf ON anag.id = cartella_inf.id_anag
+                order by anag.cognome, anag.nome ";
+
+    $res_dipendenti = mysqli_query($mysqli, $query);
+    
+    $data = [];
+    while ($row = mysqli_fetch_array($res_dipendenti)) {
+        $actions = '';
+
+        $obj = new stdClass();
+        $obj->cognome = $row['cognome'];
+        $obj->nome = $row['nome'];
+        $obj->data_nasc = dataEn2It($row['data_nasc']); 
+
+        
+        $actions .= '<button class="btn btn-warning btn_view_ingresso"  
+            data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'"   data-id_anag="' . $row['id'] . '">Ingresso</button>';
+
+
+        $actions .= '<button class="btn btn-warning btn_view_attivita"  
+              data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'" data-id_anag="' . $row['id'] . '" data-sfx="med">Attività quotidiane</button>';
+
+        $actions .= '<button class="btn btn-warning btn_view_consegne"  
+              data-paziente="' . $row['nome'] . ' ' .$row['cognome'].'" data-id_anag="' . $row['id'] . '" data-sfx="med">Registro Consegne</button>';
+        
+        
+        $obj->actions = $actions;
+        array_push($data,$obj);
         
     }
     $results = ["sEcho" => 1,

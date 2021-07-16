@@ -6,7 +6,7 @@
 
 var nome_progetto = 'SmartiPHR';
 
-function aggiornaListaAnagrafiche() {
+function aggiornaListaAnagrafiche(area) {
 
     $('.dataTables-lista_anagrafiche').dataTable({
            "bProcessing": true,
@@ -14,7 +14,7 @@ function aggiornaListaAnagrafiche() {
             'ajax': {
                url: "/" + nome_progetto + "/controller/Anagrafica.php",
                type: "POST",
-               data: {operation: "getListaAnagrafiche", func_admin: 'SI', func_subadmin: 'SI', check: 'NO'},
+               data: {operation: "getListaAnagrafiche", func_admin: 'SI', area: area},
            },
            "aoColumns": [
                  { mData: 'cognome' },
@@ -34,6 +34,66 @@ function aggiornaListaAnagrafiche() {
         
  
 }
+
+
+
+function aggiornaListaAnagraficheAreaSocioPS(area) {
+
+    $('.dataTables-lista_anagrafiche').dataTable({
+           "bProcessing": true,
+            "responsive": true,
+            'ajax': {
+               url: "/" + nome_progetto + "/controller/Anagrafica.php",
+               type: "POST",
+               data: {operation: "aggiornaListaAnagraficheAreaSocioPS", func_admin: 'SI', area: area},
+           },
+           "aoColumns": [
+                 { mData: 'cognome' },
+                 { mData: 'nome' },
+                 { mData: 'data_nasc' },
+                 { mData: 'indirizzo' } ,
+                 { mData: 'localita' },
+                 { mData: 'provincia' },
+                  { mData: 'actions' }
+               ],
+                   "columnDefs" : [
+        { targets: 0, sortable: false},
+    ],
+                  dom: '<"html5buttons"B>lTfgitp'
+
+         }); 
+        
+ 
+}
+
+
+
+function aggiornaListaAnagraficheAreaOss() {
+
+    $('.dataTables-lista_anagrafiche').dataTable({
+           "bProcessing": true,
+            "responsive": true,
+            'ajax': {
+               url: "/" + nome_progetto + "/controller/Anagrafica.php",
+               type: "POST",
+               data: {operation: "aggiornaListaAnagraficheAreaOSS"},
+           },
+           "aoColumns": [
+                 { mData: 'cognome' },
+                 { mData: 'nome' },
+                 { mData: 'data_nasc' },
+                  { mData: 'actions' }
+               ]
+
+         }); 
+        
+ 
+}
+
+
+
+
+
 
 function aggiornaDettaglio(sfx, id_cartella, id_dett) {
     $.ajax({
@@ -61,7 +121,7 @@ $('.div_riepilogo_dettaglio').each(function () {
     aggiornaDettaglio(sfx, id_cartella, id_dett);
 })
 
-aggiornaListaAnagrafiche();
+
 
 function openTab(evt, Name) {
       var i, tabcontent, tablinks;

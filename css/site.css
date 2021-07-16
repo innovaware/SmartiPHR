@@ -168,3 +168,8 @@ table.dataTable thead .sorting_asc:after {
 .btn-warning{
    margin-right: 10px; 
 }
+
+
+.btn-green{
+    background-color: #1ab394;
+}

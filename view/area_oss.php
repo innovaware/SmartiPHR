@@ -39,7 +39,6 @@ if (!checkPermission()) {
     <!-- CSS Files -->
     <link href="/<?php echo $nome_progetto ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/<?php echo $nome_progetto ?>/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/css/animate.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/css/style.css" rel="stylesheet">
        <link href="/<?php echo $nome_progetto ?>/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
@@ -1209,7 +1208,7 @@ if (!checkPermission()) {
         
           
           
-           <div id="modal_inserisci_cartella_inf" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modal_inserisci_cartella_inf" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document" style="max-width: none;width: 90%">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2804,123 +2803,14 @@ if (!checkPermission()) {
         
         <div class="container">
            <div class="row">
-                    <h3><b>AREA OSPITI</b></h3>            
-            </div>
-            
-            <div class="row">             
-                <button class="btn btn-primary" data-toggle="modal" data-target="#modal_inserisci_ospite">Inserisci Ospite</button>
-            </div>
-            <div class="row">
-                <p>AM = Documenti Amministrativi, CC = Cartella Clinica, CI = Cartella Infermieristica, AC = Autocertificazione Covid-19</p>
-            </div>
-                     
-           
-            
-            <div id="modal_inserisci_ospite" class="modal fade" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document" style="width: 90%; max-width: none">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Inserisci ospite</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                  <a class="nav-link active" id="contrattoricovero-tab" data-toggle="tab" href="#contrattoricovero" role="tab" aria-controls="home" aria-selected="true">Contratto di ricovero</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="documenti-tab" data-toggle="tab" href="#documenti" role="tab" aria-controls="profile" aria-selected="false">Documenti</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="consensoricovero-tab" data-toggle="tab" href="#consensoricovero" role="tab" aria-controls="contact" aria-selected="false">Consenso al ricovero</a>
-                                </li>
-                                
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" id="autorizzazionecontenzione-tab" data-toggle="tab" href="#autorizzazionecontenzione" role="tab" aria-controls="home" aria-selected="false">Autorizzazione alla contenzione</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="autorizzazioneuscite-tab" data-toggle="tab" href="#autorizzazioneuscite" role="tab" aria-controls="profile" aria-selected="false">Autorizzazione alle uscite</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="autorizzazioneriprese-tab" data-toggle="tab" href="#autorizzazioneriprese" role="tab" aria-controls="contact" aria-selected="false">Autorizzazione alle riprese</a>
-                                </li>
-                                
-                                
-
-                                <li class="nav-item">
-                                  <a class="nav-link" id="consensovaccino-tab" data-toggle="tab" href="#consensovaccino" role="tab" aria-controls="profile" aria-selected="false">Consenso al vaccino</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="checklist-tab" data-toggle="tab" href="#checklist" role="tab" aria-controls="contact" aria-selected="false">Checklist</a>
-                                </li>
-                                
-                                
-                              </ul>
-                              <div class="tab-content" id="myTabContent">
-                                  <div class="tab-pane fade show active" id="contrattoricovero" role="tabpanel" aria-labelledby="contrattoricovero-tab">
-                                <p style="text-align: center;"><strong>CONTRATTO DI RICOVERO</strong></p>
-<p style="text-align: center;"><strong>Tra</strong></p>
-<p><strong>R.S.A. per Disabili &ldquo;La Rinascita &rdquo;S.r.l.,&nbsp; C.F. 02073410801, con sede in Santa Caterina sullo Ionio, in C.da Monaci, 1, nella persona del Dr Rocco Cosentino, in qualit&agrave; di rappresentante legale p.t.</strong></p>
-<p style="text-align: center;"><strong>E</strong></p>
-<p><strong>Il Signor <input type="text" id="fullnome"> nato a <input type="text" id="luogo_nascita"> il <input id="data_nascita" type="text" class="form-control"> e residente in <input type="text" id="luogo_residenza"> CF <input type="text" id="CF"> che richiede assistenza personalizzata per se stesso/parente <input type="text" id="nome_parente"> nato a <input type="text" id="luogo_nascita_parente"> il <input id="data_nascita_parente" type="text" class="form-control"> CF <input type="text" id="CF_parente"> residente a <input type="text" id="luogo_residenza_parente"></strong></p>
-<p><strong>(di seguito denominato utente)</strong></p>
-<p><strong>SI CONVIENE CHE</strong></p>
-<ol>
-<li>L&rsquo;utente venga ospitato a titolo di ricovero presso la R.S.A. D &ldquo;La Rinascita&rdquo; dal <input id="data_ricovero" type="text" class="form-control"> a seguito di regolare autorizzazione dell&rsquo;A.S.P. competente per territorio;</li>
-<li>La retta giornaliera relativa alle prestazioni di assistenza socio sanitaria &egrave; quella stabilita dalla Regione Calabria; la quota a carico dell&rsquo;utente &egrave; quella calcolata dall&rsquo;A.S.P. sulla base delle normative regionali vigenti, e riportata nell&rsquo;autorizzazione;</li>
-<li>In caso di temporanea assenza dalla struttura per rientri in famiglia, lo stesso si impegna a corrispondere per intero la quota retta a suo carico;</li>
-<li>In caso di ricovero in ospedale o in altre strutture sanitarie per acuti, l&rsquo;utente non &egrave; tenuto a corrispondere alcuna retta decurtata;</li>
-<li>Per quanto attiene ai servizi erogati da &ldquo;La Rinascita&rdquo; e dei quali l&rsquo;utente ha diritto ad usufruire, viene fatto espresso rinvio alla lettera informativo di ricovero &ndash; Allegato A &ndash; che si allega al presente contratto e di cui ne fa parte integrante e sostanziale;</li>
-<li>Il familiare referente, il tutore o l&rsquo;amministratore di sostegno &egrave; obbligato a corrispondere alla struttura, mensilmente, la quota a carico dell&rsquo;utente, cos&igrave; come determinata dall&rsquo;A.S.P. e descritta nella autorizzazione;</li>
-<li>La Rinascita provveder&agrave; ad emettere fattura al termine di ogni mese solare a nome:</li>
-</ol>
-<p>Sig./Sig.ra <input type="text" id="nome_destinatario_fattura"> consegnandola a mano o inviandola al seguente indirizzo:</p>
-<p>Sig./Sig.ra <input type="text" id="nome_destinatario_fattura"></p>
-<p>Via <input type="text" id="indirizzo_destinatario_fattura"></p>
-<p>C.A.P. <input type="text" id="cap_destinatario_fattura">&nbsp;&nbsp; Citt&agrave; <input type="text" id="citta_destinatario_fattura"></p>
-<p>Il Richiedente/utente, riconoscendo la propria posizione debitoria, si obbliga ad effettuare il pagamento utilizzando le seguenti modalit&agrave;:</p>
-<ol>
-<li>A mezzo bonifico bancario codice IBAN IT59 G030 6981 6131 0000 0000 777 acceso presso la Banca &ldquo;Banco di Napoli&rdquo; Filiale di Taurianova, intestato a La Rinascita S.r.l.</li>
-<li>Presso l&rsquo;ufficio di amministrazione della R.S.A. &ldquo;La Rinascita&rdquo; dalle ore 09.30 alle ore 13.00, dal luned&igrave; al venerd&igrave;.</li>
-<li>Il richiedente dichiara espressamente di avere preso visione ed accettato l&rsquo;allegato A) al presente contratto.</li>
-</ol>
-<p>Si conviene che i dati personali ed anagrafici contenuti&nbsp; nel presente contratto formano oggetto di trattamento, da parte de La Rinascita, in osservanza alle Regolamento Europeo 2016/679 relativo alla protezione delle persone fisiche con riguardo al Trattamento dei Dati Personali, nonch&eacute; alla libera circolazione di tali dati&rdquo; (da ora in poi GDPR).</p>
-<p>Il presente contratto si compone di numero 4 (quattro) pagine comprensive dell&rsquo;allegato A), per come sopra dichiarato.</p>
-<p>Letto, confermato e sottoscritto</p>
-<p>Santa Caterina sullo Ionio l&igrave; <input id="data_contratto" type="text" class="form-control"></p>
-<p>Il Richiedente La Rinascita</p>
-<p>Il richiedente dichiara espressamente di accettare le condizioni indicate nei punti 1, 2, 3, 4, 5, 6, 7, 8 e di quanto riportato nell&rsquo;allegato A).</p>
-<p>Santa Caterina sullo Ionio l&igrave; <input id="data_contratto" type="text" class="form-control"></p>
-<p>Il Richiedente</p>
-<p>L&rsquo;identit&agrave; del richiedente &egrave; stata accertata a mezzo documento di identit&agrave; <input type="text" id="carta_ident"> di cui si allega fotocopia.</p>
-                                  </div>
-                                <div class="tab-pane fade" id="documenti" role="tabpanel" aria-labelledby="documenti-tab">2</div>
-                                <div class="tab-pane fade" id="consensoricovero" role="tabpanel" aria-labelledby="consensoricovero-tab">3</div>
-                                
-                                <div class="tab-pane fade" id="autorizzazionecontenzione" role="tabpanel" aria-labelledby="autorizzazionecontenzione-tab">1</div>
-                                <div class="tab-pane fade" id="autorizzazioneuscite" role="tabpanel" aria-labelledby="autorizzazioneuscite-tab">2</div>
-                                <div class="tab-pane fade" id="autorizzazioneriprese" role="tabpanel" aria-labelledby="autorizzazioneripreset-tab">3</div>
-                                
-                                
-                                <div class="tab-pane fade" id="consensovaccino" role="tabpanel" aria-labelledby="consensovaccino-tab">1</div>
-                                <div class="tab-pane fade" id="checklist" role="tabpanel" aria-labelledby="checklist-tab">2</div>
-
-                              </div>
-
-                        </div>
-                    <div class="modal-footer">
-                        <!--button type="button" class="btn btn-primary">Save changes</button-->
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-                    </div>
+                <div class="col-sm-6">
+                    <h3><b>AREA O.S.S</b></h3>
                 </div>
+               
             </div>
-        </div>
             
-    
-            <div class="row">
+
+            
             <div class="table-responsive">
                    <table class="table table-striped table-bordered table-hover dataTables-lista_anagrafiche">
               
@@ -2929,16 +2819,13 @@ if (!checkPermission()) {
                             <th>Cognome</th>
                             <th>Nome</th>                                   
                             <th>Data di nascita</th>                         
-                            <th>Indirizzo</th>
-                            <th>Località</th>                                   
-                            <th>Provincia</th>
                             <th></th>
                             
                         </tr>
                         </thead>
               </table>
                </div>	
-            </div>
+            
 
 
         </div>	
@@ -2968,6 +2855,529 @@ if (!checkPermission()) {
 
     <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/common.js"></script>
     <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/cartella.js"></script>
+       <link href="/<?php echo $nome_progetto ?>/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="/<?php echo $nome_progetto ?>/css/site.css" >
+ 
+</head>
+    <body>
+    <div id="wrapper">
+         <?php echo getSideBar(); ?>
+    
+        <div id="page-wrapper" class="gray-bg">
+            
+        <?php echo getnewNavBar(); ?>
+      <div class="wrapper wrapper-content">
+          
+  
+          
+        <div id="modal_ingresso" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document" style="max-width: none;width: 90%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="titleingresso"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        
+       <div id="modal_inserisci_record_intervento" class="modal fade" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuova Intervento</h5>
+                         <h3 id="id_rec_interv" style="display:none"></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="form-group" id="input_data_interv">
+                                <label class="font-normal">Data:</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_nome">Diagnosi</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_diagnosi"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Obiettivi</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_obiettivi"></textarea>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Intervento</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_interv"></textarea>
+                        </div>
+                        
+                        
+                        <div class="form-group" id="div_new_content">
+                            <label for="input_nome">Valutazione/Firma</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_valutazione"></textarea>
+                        </div>
+                        
+                        
+                        <div id="div_logger">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!--button type="button" class="btn btn-primary">Save changes</button-->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        <button class="btn btn-primary" id="btn_salva_record_interv" data-sfx="">Registra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+                
+                
+           <div id="modal_inserisci_record_diario_inf" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuovo</h5>
+                        <h3 id="id_rec_diario_inf" style="display:none"></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="form-group" id="input_data_diario_inf">
+                                <label class="font-normal">Data:</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_nome">Turno</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_turno"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Contenuto</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_diario_inf"></textarea>
+                        </div>
+                        
+                         <div class="form-group" id="div_new_content_diario_inf" style="display: none">
+                            <label for="input_nome">Nuovo Contenuto</label>
+                            <textarea class="form-control" rows="5" cols='150' id="new_content_diario_inf"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col col-6">
+                               <label for="input_nome">Firma IP</label>
+                            <textarea class="form-control" rows="5" cols='150' id="firma"></textarea>
+                            </div>
+                            
+                        </div>
+                        <div id="div_logger">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!--button type="button" class="btn btn-primary">Save changes</button-->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        <button class="btn btn-primary" id="btn_salva_record_diario_inf">Registra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        
+                        
+                        
+                
+                <label id="id_paziente" style="display: none"></label>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" onclick="openTab(event, 'checklist')">Check List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick="openTab(event, 'trattamento')">Trattamento igienico</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick="openTab(event, 'stanze')">Stanze</a>
+                    </li>
+
+                  </ul>
+                
+                
+                  <!-- CHECKLIST -->
+                  <div id="checklist" class="tabcontent">
+
+
+                        <div class="row">
+                            
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover dataTables-checklist">
+
+                                         <thead>
+                                         <tr>
+                                             <th>Descrizione</th>
+                                             <th>Quantità</th>                                                        
+                                             <th>Mancante</th>
+                                         </tr>
+                                         </thead>
+                                    </table>
+                                </div>	
+
+                        </div>
+
+
+                 </div>
+                  
+                  
+                  <!-- TRATTAMENTO -->
+                  <div id="trattamento" class="tabcontent">
+
+                      
+                      <label  style="word-wrap:break-word">
+                            <input id="cbeffettuato"  type="checkbox" /> Effettuato
+                        </label>
+
+                   </div>
+
+                   
+
+                   <!-- STANZE -->
+                  <div id="stanze" class="tabcontent">
+
+
+                        <div class="row">
+                            
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover dataTables-lista_stanze">
+
+                                         <thead>
+                                         <tr>
+                                             <th>Numero</th>
+                                             <th>Descrizione</th>                                                        
+                                             <th>Piano</th>
+                                             <th>Assegna</th>
+                                         </tr>
+                                         </thead>
+                                    </table>
+                                </div>	
+
+                        </div>
+
+
+                 </div>
+                  
+                        
+                        
+                        
+                       </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary btn-green" id="btn_save_tab_ingresso"> SALVA</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        
+          
+          
+          
+         <div id="modal_attivitaquotidiane" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document" style="max-width: none;width: 90%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="titleattivitaquotidiane"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        
+       <div id="modal_inserisci_record_intervento" class="modal fade" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuova Intervento</h5>
+                         <h3 id="id_rec_interv" style="display:none"></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="form-group" id="input_data_interv">
+                                <label class="font-normal">Data:</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_nome">Diagnosi</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_diagnosi"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Obiettivi</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_obiettivi"></textarea>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Intervento</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_interv"></textarea>
+                        </div>
+                        
+                        
+                        <div class="form-group" id="div_new_content">
+                            <label for="input_nome">Valutazione/Firma</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_valutazione"></textarea>
+                        </div>
+                        
+                        
+                        <div id="div_logger">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!--button type="button" class="btn btn-primary">Save changes</button-->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        <button class="btn btn-primary" id="btn_salva_record_interv" data-sfx="">Registra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+                
+                
+           <div id="modal_inserisci_record_diario_inf" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuovo</h5>
+                        <h3 id="id_rec_diario_inf" style="display:none"></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="form-group" id="input_data_diario_inf">
+                                <label class="font-normal">Data:</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_nome">Turno</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_turno"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input_nome">Contenuto</label>
+                            <textarea class="form-control" rows="5" cols='150' id="content_diario_inf"></textarea>
+                        </div>
+                        
+                         <div class="form-group" id="div_new_content_diario_inf" style="display: none">
+                            <label for="input_nome">Nuovo Contenuto</label>
+                            <textarea class="form-control" rows="5" cols='150' id="new_content_diario_inf"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col col-6">
+                               <label for="input_nome">Firma IP</label>
+                            <textarea class="form-control" rows="5" cols='150' id="firma"></textarea>
+                            </div>
+                            
+                        </div>
+                        <div id="div_logger">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!--button type="button" class="btn btn-primary">Save changes</button-->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        <button class="btn btn-primary" id="btn_salva_record_diario_inf">Registra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        
+                        
+                        
+                
+                <label id="id_paziente_attivitaquotidiane" style="display: none"></label>
+
+                  <!-- ATTIVITA -->
+                  <div id="attivitaquotidiane" class="tabcontent">
+
+
+                        <div class="row">
+                            
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover dataTables-attivitaquotidiane">
+
+                                         <thead>
+                                         <tr>
+                                             <th>Descrizione</th>
+                                             <th>Eseguita</th>                                                        
+                                             <th>Data</th>
+                                         </tr>
+                                         </thead>
+                                    </table>
+                                </div>	
+
+                        </div>
+
+
+                 </div>
+                  
+
+                       </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary btn-green" id="btn_save_tab_ingresso"> SALVA</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+       
+          
+           <div id="modal_registro" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document" style="max-width: none;width: 90%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="title_registro"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                <label id="id_paziente_registro" style="display: none"></label>
+
+                  <!-- ATTIVITA -->
+                  <div id="registro">
+
+
+                            
+                        <label  style="word-wrap:break-word">
+                            <input id="cbletto"  type="checkbox" /> G.Letto
+                        </label>
+                         <br>
+                        <label  style="word-wrap:break-word">
+                            <input id="cbdiuresi"  type="checkbox" /> Diuresi
+                        </label>
+                         <br>
+                         <label  style="word-wrap:break-word">
+                            <input id="cbevacuazione"  type="checkbox" /> Evacuazione
+                        </label>
+                         <br>
+                        <label  style="word-wrap:break-word">
+                            <input id="cbigiene"  type="checkbox"  /> Igiene
+                        </label>
+                         
+                         <br>
+                         <label  style="word-wrap:break-word">
+                            <input id="cbdoccia"  type="checkbox" /> Doccia
+                        </label>
+                         <br>
+                        <label  style="word-wrap:break-word">
+                            <input id="cbbarba"  type="checkbox" /> Barba
+                        </label>
+                         <br>
+                         <label  style="word-wrap:break-word">
+                            <input id="cbtagliocapelli"  type="checkbox" /> Taglio capelli
+                        </label>
+                         <br>
+                        <label  style="word-wrap:break-word">
+                            <input id="cbtagliounghie"  type="checkbox"  /> Taglio unghie
+                        </label>
+                        <br>
+                         <label  style="word-wrap:break-word">
+                            <input id="cblenzuola"  type="checkbox" /> C.Lenzuola
+                        </label>
+                        <br>
+                        
+                        <h3>Note:</h3>
+                        <br>
+                        <textarea id="txtnote"></textarea>
+                       
+
+
+                 </div>
+                  
+
+                       </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary btn-green" id="btn_save_tab_ingresso"> SALVA</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+          
+          
+        <div class="container">
+           <div class="row">
+                <div class="col-sm-6">
+                    <h3><b>AREA O.S.S</b></h3>
+                </div>
+               
+            </div>
+            
+
+            
+            <div class="table-responsive">
+                   <table class="table table-striped table-bordered table-hover dataTables-lista_anagrafiche">
+              
+                        <thead>
+                        <tr>
+                            <th>Cognome</th>
+                            <th>Nome</th>                                   
+                            <th>Data di nascita</th>                         
+                            <th></th>
+                            
+                        </tr>
+                        </thead>
+              </table>
+               </div>	
+            
+
+
+        </div>	
+      </div>
+   </div>
+            
+</div>
+   <!-- Mainly scripts -->
+    <script src="/<?php echo $nome_progetto ?>/js/jquery-3.1.1.min.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/popper.min.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/bootstrap.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/plugins/dataTables/datatables.min.js"></script>
+    <script src="js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+    <!-- Peity -->
+    <script src="/<?php echo $nome_progetto ?>/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="/<?php echo $nome_progetto ?>/js/inspinia.js"></script>
+    <script src="/<?php echo $nome_progetto ?>/js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="/<?php echo $nome_progetto ?>/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/common.js"></script>
+    <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/cartella.js"></script>
+    <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/oss.js"></script>
     
     <script type="text/javascript" src="/<?php echo $nome_progetto ?>/js/plugins/datapicker/bootstrap-datepicker.js"></script>
     
@@ -2978,25 +3388,8 @@ if (!checkPermission()) {
 <script>
                 
  $(document).ready(function(){
-        
-        aggiornaListaAnagrafiche(0);
-        
-                $('#data_nascita_parente').datepicker({
-                    todayBtn: "linked",
-                    keyboardNavigation: false,
-                    forceParse: false,
-                    calendarWeeks: true,
-                    autoclose: true
-                });
-                
-                $('#data_nascita').datepicker({
-                    todayBtn: "linked",
-                    keyboardNavigation: false,
-                    forceParse: false,
-                    calendarWeeks: true,
-                    autoclose: true
-                });
-                
+                       
+        aggiornaListaAnagraficheAreaOss();
         $('#data_trasferimento .input-group.date').datepicker({
                     todayBtn: "linked",
                     keyboardNavigation: false,
@@ -3069,6 +3462,8 @@ $('#input_data_terapia .input-group.date').datepicker({
         });    
 
  });
+ 
+
         </script>
 
 
