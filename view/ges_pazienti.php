@@ -2861,7 +2861,14 @@ if (!checkPermission()) {
                                 
                               </ul>
                               <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade" id="contrattoricovero" role="tabpanel" aria-labelledby="contrattoricovero-tab">1</div>
+                                  <div class="tab-pane fade show active" id="contrattoricovero" role="tabpanel" aria-labelledby="contrattoricovero-tab">
+                                <p style="text-align: center;"><strong>CONTRATTO DI RICOVERO</strong></p>
+<p style="text-align: center;"><strong>Tra</strong></p>
+<p><strong>R.S.A. per Disabili &ldquo;La Rinascita &rdquo;S.r.l.,&nbsp; C.F. 02073410801, con sede in Santa Caterina sullo Ionio, in C.da Monaci, 1, nella persona del Dr Rocco Cosentino, in qualit&agrave; di rappresentante legale p.t.</strong></p>
+<p style="text-align: center;"><strong>E</strong></p>
+<p><strong>Il Signor NOME COGNOME nato a CITTA il DATA e residente in INDIRIZZO Via VIA CF CF che richiede assistenza personalizzata per se stesso/parente PARENTE nato a CITTA il DATA CF CF residente a CITTA Via VIA</strong></p>
+<p style="text-align: center;"><strong>(di seguito denominato utente)</strong></p>
+                                </div>
                                 <div class="tab-pane fade" id="documenti" role="tabpanel" aria-labelledby="documenti-tab">2</div>
                                 <div class="tab-pane fade" id="consensoricovero" role="tabpanel" aria-labelledby="consensoricovero-tab">3</div>
                                 
@@ -2943,7 +2950,7 @@ if (!checkPermission()) {
 <script>
                 
  $(document).ready(function(){
-                       
+                     aggiornaListaAnagrafiche(0);   
         $('#data_trasferimento .input-group.date').datepicker({
                     todayBtn: "linked",
                     keyboardNavigation: false,
