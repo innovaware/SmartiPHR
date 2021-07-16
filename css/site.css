@@ -156,11 +156,15 @@ table.dataTable thead .sorting_asc:after {
     padding: 20px;
 }
 
-#data_nascita, #data_nascita_parente {
+#data_nascita, #data_nascita_parente, #data_contratto {
     display: inline;
     width: 100px;
 }
 
 #btn_login {
     margin-top: 20px;
+}
+
+.btn-warning{
+   margin-right: 10px; 
 }
