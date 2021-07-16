@@ -39,6 +39,7 @@ if (!checkPermission()) {
     <!-- CSS Files -->
     <link href="/<?php echo $nome_progetto ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/<?php echo $nome_progetto ?>/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/css/animate.css" rel="stylesheet">
     <link href="/<?php echo $nome_progetto ?>/css/style.css" rel="stylesheet">
        <link href="/<?php echo $nome_progetto ?>/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
@@ -2803,19 +2804,17 @@ if (!checkPermission()) {
         
         <div class="container">
            <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <h3>AREA OSPITI</h3>
-                </div>
-               
+                    <h3><b>AREA OSPITI</b></h3>            
             </div>
             
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modal_inserisci_ospite">Inserisci Ospite</button>
-            
-            <br>
-            <p>AM = Documenti Amministrativi, CC = Cartella Clinica, CI = Cartella Infermieristica, AC = Autocertificazione Covid-19</p>
-            
-            
-            
+            <div class="row">             
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal_inserisci_ospite">Inserisci Ospite</button>
+            </div>
+            <div class="row">
+                <p>AM = Documenti Amministrativi, CC = Cartella Clinica, CI = Cartella Infermieristica, AC = Autocertificazione Covid-19</p>
+            </div>
+                     
+           
             
             <div id="modal_inserisci_ospite" class="modal fade" tabindex="-1" role="dialog">
                   <div class="modal-dialog" role="document" style="width: 90%; max-width: none">
@@ -2892,7 +2891,7 @@ if (!checkPermission()) {
         </div>
             
     
-            
+            <div class="row">
             <div class="table-responsive">
                    <table class="table table-striped table-bordered table-hover dataTables-lista_anagrafiche">
               
@@ -2910,7 +2909,7 @@ if (!checkPermission()) {
                         </thead>
               </table>
                </div>	
-            
+            </div>
 
 
         </div>	
