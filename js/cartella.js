@@ -55,7 +55,11 @@ function aggiornaListaAnagraficheAreaSocioPS(area) {
                  { mData: 'localita' },
                  { mData: 'provincia' },
                   { mData: 'actions' }
-               ]
+               ],
+                   "columnDefs" : [
+        { targets: 0, sortable: false},
+    ],
+                  dom: '<"html5buttons"B>lTfgitp'
 
          }); 
         
