@@ -2997,6 +2997,7 @@ if (!checkPermission()) {
                     autoclose: true
                 });
                 
+                     aggiornaListaAnagrafiche(0);   
         $('#data_trasferimento .input-group.date').datepicker({
                     todayBtn: "linked",
                     keyboardNavigation: false,
