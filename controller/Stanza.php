@@ -26,6 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['operation'] == 'deleteIntervento') {
         deleteIntervento($_POST['id_stanza'], $_POST['tipo_intervento']);
     }
+    
+     if ($_POST['operation'] == 'getListaAreaAusiliari') {
+        echo getListaAreaAusiliari();
+    }
 }
 
 function getListaStanze() {
@@ -215,3 +219,41 @@ function insertCaricoScarico($id_farmaco, $id_paziente, $qta, $note) {
     echo json_encode($res);
 }
 */
+
+
+
+
+function getListaAreaAusiliari() {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $mysqli = new mysqli(DB_SERVER_FMAG, DB_USER_FMAG, DB_PASSWORD_FMAG, DB_DATABASE_FMAG);
+   $query = " SELECT * 
+                FROM t_stanza ORDER BY numero
+                    ";
+
+    $res_staze = mysqli_query($mysqli, $query);
+    
+    $data = [];
+    while ($row = mysqli_fetch_array($res_staze)) {
+        $actions = '';
+
+        $obj = new stdClass();
+        $obj->numero = $row['numero'];
+        $obj->numero = $row['numero'];
+        $obj->piano = $row['piano'];
+       
+        $actions .= '<button class="btn btn-warning btn_view_area_amm"  
+                    data-id_stanza="' . $row['id'] . '"  ">Trattamento</button>';
+        $obj->actions = $actions;
+            array_push($data,$obj);
+        
+    }
+    $results = ["sEcho" => 1,
+        	"iTotalRecords" => count($data),
+        	"iTotalDisplayRecords" => count($data),
+        	"aaData" => $data ];
+
+
+        echo json_encode($results);
+}

@@ -36,6 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['operation'] == 'aggiornaListaAnagraficheAreaOSS') {
         echo getListaAnagraficheAreaOSS();
     }
+    
+    
+    if ($_POST['operation'] == 'getListaAnagraficheMenu') {
+        echo getListaAnagraficheMenu();
+    }
 }
 
 function insertAnagrafica($nome, $cognome, $indirizzo, $data_nasc, $sesso, $cap, $localita, $provincia) {
@@ -304,3 +309,47 @@ function getDatiPanelAnagrafica($id_paziente) {
     return json_encode($result);
 }
 
+
+
+function getListaAnagraficheMenu() {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $mysqli = new mysqli(DB_SERVER_FMAG, DB_USER_FMAG, DB_PASSWORD_FMAG, DB_DATABASE_FMAG);
+    $query = " select anag.*
+                from t_anagrafica anag              
+                order by anag.cognome, anag.nome ";
+
+    $res_pazienti = mysqli_query($mysqli, $query);
+    
+    $data = [];
+    while ($row = mysqli_fetch_array($res_pazienti)) {
+        $actions = '';
+
+        $obj = new stdClass();
+        $obj->cognome = $row['cognome'];
+        $obj->nome = $row['nome'];
+        $obj->data_nasc = dataEn2It($row['data_nasc']); 
+
+        $obj->indirizzo = $row['indirizzo'];
+        $obj->localita = $row['localita'];
+        $obj->provincia = $row['provincia'];
+
+        $actions .= '<button class="btn btn-warning btn_view_area_amm"  
+                    data-id_paziente="' . $row['id'] . '" >MENU\'</button>';
+
+        
+      
+        
+            $obj->actions = $actions;
+            array_push($data,$obj);
+        
+    }
+    $results = ["sEcho" => 1,
+        	"iTotalRecords" => count($data),
+        	"iTotalDisplayRecords" => count($data),
+        	"aaData" => $data ];
+
+
+        echo json_encode($results);
+}

@@ -44,7 +44,16 @@ RewriteRule ^area_cartella_educativa  view/area_cartella_educativa.php    [NC,L]
 
 RewriteRule ^area_oss  view/area_oss.php    [NC,L]  #
 
+RewriteRule ^area_ausiliari  view/area_ausiliari.php    [NC,L]  #
+
+RewriteRule ^ges_menu  view/area_menu_cucina.php    [NC,L]  #
+
 RewriteRule ^visualizza/?([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ view/view_doc.php?tipo=$1&id=$2  [NC,L]
+
+
+RewriteRule ^documenti_covid  view/documenti_covid.php    [NC,L]  #
+RewriteRule ^calendario_visite_fam  view/calendario_visite_fam.php    [NC,L]  #
+RewriteRule ^consegne_mascherine  view/consegne_mascherine.php    [NC,L]  #
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
