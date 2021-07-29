@@ -2865,9 +2865,38 @@ if (!checkPermission()) {
 <p style="text-align: center;"><strong>Tra</strong></p>
 <p><strong>R.S.A. per Disabili &ldquo;La Rinascita &rdquo;S.r.l.,&nbsp; C.F. 02073410801, con sede in Santa Caterina sullo Ionio, in C.da Monaci, 1, nella persona del Dr Rocco Cosentino, in qualit&agrave; di rappresentante legale p.t.</strong></p>
 <p style="text-align: center;"><strong>E</strong></p>
-<p><strong>Il Signor NOME COGNOME nato a CITTA il DATA e residente in INDIRIZZO Via VIA CF CF che richiede assistenza personalizzata per se stesso/parente PARENTE nato a CITTA il DATA CF CF residente a CITTA Via VIA</strong></p>
-<p style="text-align: center;"><strong>(di seguito denominato utente)</strong></p>
-                                </div>
+<p><strong>Il Signor <input type="text" id="fullnome"> nato a <input type="text" id="luogo_nascita"> il <input id="data_nascita" type="text" class="form-control"> e residente in <input type="text" id="luogo_residenza"> CF <input type="text" id="CF"> che richiede assistenza personalizzata per se stesso/parente <input type="text" id="nome_parente"> nato a <input type="text" id="luogo_nascita_parente"> il <input id="data_nascita_parente" type="text" class="form-control"> CF <input type="text" id="CF_parente"> residente a <input type="text" id="luogo_residenza_parente"></strong></p>
+<p><strong>(di seguito denominato utente)</strong></p>
+<p><strong>SI CONVIENE CHE</strong></p>
+<ol>
+<li>L&rsquo;utente venga ospitato a titolo di ricovero presso la R.S.A. D &ldquo;La Rinascita&rdquo; dal <input id="data_ricovero" type="text" class="form-control"> a seguito di regolare autorizzazione dell&rsquo;A.S.P. competente per territorio;</li>
+<li>La retta giornaliera relativa alle prestazioni di assistenza socio sanitaria &egrave; quella stabilita dalla Regione Calabria; la quota a carico dell&rsquo;utente &egrave; quella calcolata dall&rsquo;A.S.P. sulla base delle normative regionali vigenti, e riportata nell&rsquo;autorizzazione;</li>
+<li>In caso di temporanea assenza dalla struttura per rientri in famiglia, lo stesso si impegna a corrispondere per intero la quota retta a suo carico;</li>
+<li>In caso di ricovero in ospedale o in altre strutture sanitarie per acuti, l&rsquo;utente non &egrave; tenuto a corrispondere alcuna retta decurtata;</li>
+<li>Per quanto attiene ai servizi erogati da &ldquo;La Rinascita&rdquo; e dei quali l&rsquo;utente ha diritto ad usufruire, viene fatto espresso rinvio alla lettera informativo di ricovero &ndash; Allegato A &ndash; che si allega al presente contratto e di cui ne fa parte integrante e sostanziale;</li>
+<li>Il familiare referente, il tutore o l&rsquo;amministratore di sostegno &egrave; obbligato a corrispondere alla struttura, mensilmente, la quota a carico dell&rsquo;utente, cos&igrave; come determinata dall&rsquo;A.S.P. e descritta nella autorizzazione;</li>
+<li>La Rinascita provveder&agrave; ad emettere fattura al termine di ogni mese solare a nome:</li>
+</ol>
+<p>Sig./Sig.ra <input type="text" id="nome_destinatario_fattura"> consegnandola a mano o inviandola al seguente indirizzo:</p>
+<p>Sig./Sig.ra <input type="text" id="nome_destinatario_fattura"></p>
+<p>Via <input type="text" id="indirizzo_destinatario_fattura"></p>
+<p>C.A.P. <input type="text" id="cap_destinatario_fattura">&nbsp;&nbsp; Citt&agrave; <input type="text" id="citta_destinatario_fattura"></p>
+<p>Il Richiedente/utente, riconoscendo la propria posizione debitoria, si obbliga ad effettuare il pagamento utilizzando le seguenti modalit&agrave;:</p>
+<ol>
+<li>A mezzo bonifico bancario codice IBAN IT59 G030 6981 6131 0000 0000 777 acceso presso la Banca &ldquo;Banco di Napoli&rdquo; Filiale di Taurianova, intestato a La Rinascita S.r.l.</li>
+<li>Presso l&rsquo;ufficio di amministrazione della R.S.A. &ldquo;La Rinascita&rdquo; dalle ore 09.30 alle ore 13.00, dal luned&igrave; al venerd&igrave;.</li>
+<li>Il richiedente dichiara espressamente di avere preso visione ed accettato l&rsquo;allegato A) al presente contratto.</li>
+</ol>
+<p>Si conviene che i dati personali ed anagrafici contenuti&nbsp; nel presente contratto formano oggetto di trattamento, da parte de La Rinascita, in osservanza alle Regolamento Europeo 2016/679 relativo alla protezione delle persone fisiche con riguardo al Trattamento dei Dati Personali, nonch&eacute; alla libera circolazione di tali dati&rdquo; (da ora in poi GDPR).</p>
+<p>Il presente contratto si compone di numero 4 (quattro) pagine comprensive dell&rsquo;allegato A), per come sopra dichiarato.</p>
+<p>Letto, confermato e sottoscritto</p>
+<p>Santa Caterina sullo Ionio l&igrave; <input id="data_contratto" type="text" class="form-control"></p>
+<p>Il Richiedente La Rinascita</p>
+<p>Il richiedente dichiara espressamente di accettare le condizioni indicate nei punti 1, 2, 3, 4, 5, 6, 7, 8 e di quanto riportato nell&rsquo;allegato A).</p>
+<p>Santa Caterina sullo Ionio l&igrave; <input id="data_contratto" type="text" class="form-control"></p>
+<p>Il Richiedente</p>
+<p>L&rsquo;identit&agrave; del richiedente &egrave; stata accertata a mezzo documento di identit&agrave; <input type="text" id="carta_ident"> di cui si allega fotocopia.</p>
+                                  </div>
                                 <div class="tab-pane fade" id="documenti" role="tabpanel" aria-labelledby="documenti-tab">2</div>
                                 <div class="tab-pane fade" id="consensoricovero" role="tabpanel" aria-labelledby="consensoricovero-tab">3</div>
                                 
@@ -2949,6 +2978,25 @@ if (!checkPermission()) {
 <script>
                 
  $(document).ready(function(){
+        
+        aggiornaListaAnagrafiche(0);
+        
+                $('#data_nascita_parente').datepicker({
+                    todayBtn: "linked",
+                    keyboardNavigation: false,
+                    forceParse: false,
+                    calendarWeeks: true,
+                    autoclose: true
+                });
+                
+                $('#data_nascita').datepicker({
+                    todayBtn: "linked",
+                    keyboardNavigation: false,
+                    forceParse: false,
+                    calendarWeeks: true,
+                    autoclose: true
+                });
+                
                      aggiornaListaAnagrafiche(0);   
         $('#data_trasferimento .input-group.date').datepicker({
                     todayBtn: "linked",
